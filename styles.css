@@ -4,26 +4,21 @@
 }
 
 body {
-    background-color: #05070A;
-    color: #05070A;
+    background-color: var(--dark-color);
+    color: var(--light-color);
     margin: 0px;
 }
 
 .text-section {
-    background-color: var(--dark-color);
     padding: 10px;
     padding-left: 20%;
-    color: var(--light-color);
 }
 
 .no-padding {
     padding: 0px;
 }
 
-#portal-section {
-    background-image: 
-        linear-gradient(180deg, transparent, var(--dark-color)),
-        url("https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/ss_3d13161104a04603a0524536770c5f74626db4c0.1920x1080.jpg?t=1745363004");
+.fullscreen-section {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -31,27 +26,12 @@ body {
     height: 750px;
 }
 
-#mkwii-section {
-    background: 
-        linear-gradient(180deg, var(--dark-color), transparent, var(--dark-color)),
-        url("https://mario.wiki.gallery/images/thumb/d/db/Poster_MKWii.jpg/800px-Poster_MKWii.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    height: 750px;
+.duo-section > div {
+    width: 750px;
 }
 
-#bloodborne-section {
-    background: 
-        linear-gradient(180deg, var(--dark-color), transparent, var(--dark-color)),
-        linear-gradient(270deg, transparent, var(--dark-color)),
-        url("https://image.api.playstation.com/vulcan/img/rnd/202010/2614/Sy5e8DmeKIJVjlAGraPAJYkT.png");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-
-    height: 750px;
+.trio-section > div {
+    width: 500px;
 }
 
 .flex-section {
@@ -63,16 +43,6 @@ body {
 
     padding: 10px;
     gap: 10px;
-
-    color: var(--light-color);
-}
-
-.dual-section > div {
-    width: 750px;
-}
-
-.trio-section > div {
-    width: 500px;
 }
 
 #title-4-img-crop {

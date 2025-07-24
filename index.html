@@ -1,91 +1,15 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Joe Bray's Top Ten Games</title>
+        <title>Joe Bray's Top Games List</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="./styles.css">
+        <link rel="shortcut icon" type="image/png" href="./favicon.ico">
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script type="text/javascript" src="load-data.js"></script>
     </head>
     <body>
-        <!--
-            <div class="text-section no-padding">
-                <h1 style="text-align: center; margin: 0px; padding: 20px;">Joe Bray's Top Ten Games</h1>
-            </div>
-        -->
-        <div class="horizontal-section" id="portal-section"></div>
-        <div class="text-section">
-            <h1 style="color: #EFBF04;">1. Portal 2</h1>
-            <p>This is my personal favorite.</p>
-        </div>
-
-        <div class="horizontal-section" id="mkwii-section"></div>
-        <div class="text-section">
-            <h1>2. Mariokart Wii</h1>
-            <!-- <img src="https://mario.wiki.gallery/images/thumb/2/29/Mkwii.jpg/800px-Mkwii.jpg" alt="mkwii-cover-art"/> -->
-            <p>MK Wii is fantastic.</p>
-        </div>
-
-        <div class="horizontal-section" id="bloodborne-section"></div>
-        <div class="text-section">
-            <h1 style="color: #CD7F32;">3. Bloodborne</h1>
-            <p>My beloved</p>
-        </div>
-
-        <div class="flex-section dual-section">
-            <div id="title-4">
-                <div id="title-4-img-crop">
-                    <img id="title-4-img" src="https://images.ctfassets.net/rporu91m20dc/3Aw3GHu8eCsAXwLQxJvEtJ/3ca44b8470c254632c047835bffbb557/D16_Slayer_Cover_HERO_1920x870.png"/>
-                </div>
-                <div class="text-section">
-                    <h1>4. Doom (2016)</h1>
-                    <p>My beloved</p>
-                </div>
-            </div>
-
-            <div id="title-5">
-                <img src="https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/21904999/Hades_Launch.png?quality=90&strip=all&crop=21.875,0,56.25,100"/>
-                <div class="text-section">
-                    <h1>5. Hades</h1>
-                    <p>My beloved</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex-section dual-section">
-            <div id="title-6">
-                <img src="https://www.gadgetmatch.com/wp-content/uploads/2023/09/01_FF7R_ARTfinal-fantasy-vii-rebirth-ffvii-rebirth-20230915.jpg"/>
-                <div class="text-section">
-                    <h1>6. Final Fantasy VII Rebirth</h1>
-                    <p>My beloved</p>
-                </div>
-            </div>
-
-            <div id="title-7">
-                <img src="./mario-bros-wii-title-screen.png"/>
-                <div class="text-section">
-                    <h1>7. Super Mario Bros. Wii</h1>
-                    <p>My beloved</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex-section trio-section">
-            <div id="title-8">
-                <img src="https://cdn2.steamgriddb.com/thumb/7cec5d42c6b145322265ae9a31ec2bf0.jpg"/>
-                <h1>8. Lego Star Wars: The Complete Saga</h1>
-                <p>My beloved</p>
-            </div>
-
-            <div id="title-9">
-                <img src="https://static1.thegamerimages.com/wordpress/wp-content/uploads/2022/01/EarthBound-Street.jpg"/>
-                <h1>9. Earthbound</h1>
-                <p>My beloved</p>
-            </div>
-
-            <div id="title-10">
-                <img src="https://assetsio.gnwcdn.com/1_0CcGwXB.jpg?width=414&quality=70&format=jpg&auto=webp"/>
-                <h1>10. Super Mario Bros. Wii</h1>
-                <p>My beloved</p>
-            </div>
-        </div>
+        <div id="content"></div>
     </body>
 </html>
