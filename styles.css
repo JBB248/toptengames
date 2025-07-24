@@ -14,8 +14,8 @@ body {
     padding-left: 20%;
 }
 
-.no-padding {
-    padding: 0px;
+.no-indent {
+    padding-left: 0px;
 }
 
 .fullscreen-section {
@@ -35,4 +35,18 @@ body {
 
     padding: 10px;
     gap: 10px;
+}
+
+.duo-item {
+    width: 750px;
+    overflow: hidden;
+}
+
+.trio-item {
+    width: 500px;
+    overflow: hidden;
+}
+
+.showoff-image {
+    width: 100%;
 }

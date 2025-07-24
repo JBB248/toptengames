@@ -31,13 +31,11 @@ function loadJson(json)
         container.className = "flex-section";
 
         const div1 = document.createElement("div");
-        div1.style.width = "750px";
-        div1.style.overflow = "hidden";
+        div1.classList.add("duo-item")
         flexSectionHelper(div1, element1);
 
         const div2 = document.createElement("div");
-        div2.style.width = "750px";
-        div2.style.overflow = "hidden";
+        div2.classList.add("duo-item")
         flexSectionHelper(div2, element2);
 
         container.appendChild(div1);
@@ -51,18 +49,15 @@ function loadJson(json)
         container.className = "flex-section";
 
         const div1 = document.createElement("div");
-        div1.style.width = "500px";
-        div1.style.overflow = "hidden";
+        div1.classList.add("trio-item")
         flexSectionHelper(div1, element1, false);
 
         const div2 = document.createElement("div");
-        div2.style.width = "500px";
-        div2.style.overflow = "hidden";
+        div2.classList.add("trio-item")
         flexSectionHelper(div2, element2, false);
 
         const div3 = document.createElement("div");
-        div3.style.width = "500px";
-        div3.style.overflow = "hidden";
+        div3.classList.add("trio-item")
         flexSectionHelper(div3, element3, false);
 
         container.appendChild(div1);
@@ -76,7 +71,7 @@ function loadJson(json)
         const description = document.createElement("div");
         description.className = "text-section";
         if(!indent)
-            description.style.paddingLeft = "0px";
+            description.classList.add("no-indent");
 
         const title = document.createElement("h1");
         title.innerText = count + ". " + element["title"];
@@ -99,7 +94,7 @@ function loadJson(json)
     {
         const image = document.createElement("img");
         image.setAttribute("src", element["image-link"]);
-        image.style.width = "100%";
+        image.classList.add("showoff-image");
         if(element["special-css"])
             element["special-css"].forEach(style => image.style.setProperty(style[0], style[1]));
 
