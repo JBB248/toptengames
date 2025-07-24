@@ -26,14 +26,6 @@ body {
     height: 750px;
 }
 
-.duo-section > div {
-    width: 750px;
-}
-
-.trio-section > div {
-    width: 500px;
-}
-
 .flex-section {
     border-top: #BBBBBB solid 5px;
 
@@ -43,39 +35,4 @@ body {
 
     padding: 10px;
     gap: 10px;
-}
-
-#title-4-img-crop {
-    overflow: hidden;
-}
-
-#title-4 img {
-    width: 200%;
-    margin-left: -100%;
-}
-
-#title-5 img {
-    width: 100%;
-}
-
-#title-6 img {
-    width: 100%;
-}
-
-#title-7 img {
-    width: 100%;
-}
-
-#title-8 img {
-    width: 100%;
-}
-
-#title-9 img {
-    width: 100%;
-    image-rendering: pixelated;
-}
-
-#title-10 img {
-    width: 100%;
-    image-rendering: pixelated;
 }
