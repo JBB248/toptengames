@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", function(_) {
 
 function loadJson(json)
 {
+    if(!(json instanceof Array))
+    {
+        console.warn("Incorrect json format. See 'https://raw.githubusercontent.com/JBB248/toptengames/refs/heads/main/data.json' for an example.");
+        return;
+    }
+
     const FULLSCREEN = "fullscreen";
     const DUO = "duo";
     const TRIO = "trio";
@@ -102,12 +108,24 @@ function loadJson(json)
         textSectionHelper(container, element, indent);
     }
 
-    json.forEach(element => {
+    json.forEach((element, index) => {
         if(element.type == FULLSCREEN)
-            appendFullscreenSection(element.titles[0]);
+            if(element.titles && element.titles instanceof Array && element.titles.length > 0)
+                appendFullscreenSection(element.titles[0]);
+            else
+                console.warn("Section " + (index + 1) + " (fullscreen section) either could not be read or is empty.");
         else if(element.type == DUO)
-            appendDuoSection(element.titles[0], element.titles[1]);
+            if(element.titles && element.titles instanceof Array && element.titles.length > 1)
+                appendDuoSection(element.titles[0], element.titles[1]);
+            else
+                console.warn("Section " + (index + 1) + " (duo section) either could not be read or does not contain at least two titles.");
+
         else if(element.type == TRIO)
-            appendTrioSection(element.titles[0], element.titles[1], element.titles[2]);
+            if(element.titles && element.titles instanceof Array && element.titles.length > 2)
+                appendTrioSection(element.titles[0], element.titles[1], element.titles[2]);
+            else
+                console.warn("Section " + (index + 1) + " (trio section) either could not be read or does not contain at least three titles.");
+        else
+            console.warn("Section " + (index + 1) + " has no valid type");
     });
 }
