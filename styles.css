@@ -39,12 +39,16 @@ body {
 
 .duo-item {
     width: 750px;
-    overflow: hidden;
 }
 
 .trio-item {
     width: 500px;
+}
+
+.showoff-image-container {
     overflow: hidden;
+    width: 100%;
+    border: var(--light-color) solid 2px;
 }
 
 .showoff-image {

@@ -98,13 +98,17 @@ function loadJson(json)
 
     function flexSectionHelper(container, element, indent=true)
     {
+        const imageContainer = document.createElement("div");
+        imageContainer.classList.add("showoff-image-container");
+
         const image = document.createElement("img");
         image.setAttribute("src", element["image-link"]);
         image.classList.add("showoff-image");
-        if(element["special-css"])
-            element["special-css"].forEach(style => image.style.setProperty(style[0], style[1]));
+        if(element["special-image-css"])
+            element["special-image-css"].forEach(style => image.style.setProperty(style[0], style[1]));
 
-        container.appendChild(image);
+        imageContainer.appendChild(image);
+        container.appendChild(imageContainer);
         textSectionHelper(container, element, indent);
     }
 
