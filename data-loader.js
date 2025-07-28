@@ -23,12 +23,16 @@ function loadJson(json)
 
     function appendFullscreenSection(element)
     {
+        const container = document.createElement("div");
+        container.classList.add("fullscreen-section");
+
         const background = document.createElement("div");
-        background.className = "fullscreen-section";
+        background.className = "fullscreen-image";
         background.style.backgroundImage = "linear-gradient(180deg, var(--dark-color), transparent, var(--dark-color)), url(" + element["image-link"] + ")"
 
-        document.getElementById("content").appendChild(background);
-        textSectionHelper(document.getElementById("content"), element);
+        container.appendChild(background);
+        textSectionHelper(container, element);
+        document.getElementById("top-titles-section").appendChild(container);
     }
 
     function appendDuoSection(element1, element2)
@@ -46,7 +50,7 @@ function loadJson(json)
 
         container.appendChild(div1);
         container.appendChild(div2);
-        document.getElementById("content").appendChild(container);
+        document.getElementById("top-titles-section").appendChild(container);
     }
 
     function appendTrioSection(element1, element2, element3)
@@ -69,7 +73,7 @@ function loadJson(json)
         container.appendChild(div1);
         container.appendChild(div2);
         container.appendChild(div3);
-        document.getElementById("content").appendChild(container);
+        document.getElementById("top-titles-section").appendChild(container);
     }
 
     function textSectionHelper(container, element, indent=true)

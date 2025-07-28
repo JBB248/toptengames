@@ -4,9 +4,16 @@
 }
 
 body {
-    background-color: var(--dark-color);
+    background-image: url("./base-grid-debug.png");
+    background-attachment: fixed;
     color: var(--light-color);
     margin: 0px;
+}
+
+#header {
+    background-color: var(--dark-color);
+    text-align: center;
+    padding: 20px 0px;
 }
 
 .text-section {
@@ -19,6 +26,10 @@ body {
 }
 
 .fullscreen-section {
+    background-color: var(--dark-color);
+}
+
+.fullscreen-image {
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -28,6 +39,7 @@ body {
 
 .flex-section {
     border-top: #BBBBBB solid 5px;
+    background-color: rgba(5, 7, 10, 0.95);
 
     display: flex;
     flex-wrap: wrap;
