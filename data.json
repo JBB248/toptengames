@@ -33,15 +33,15 @@
         "type": "duo",
         "titles": [
             {
+                "title": "Hades",
+                "image-link": "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/21904999/Hades_Launch.png?quality=90&strip=all&crop=21.875,0,56.25,100",
+                "description": "[Example text]"
+            },
+            {
                 "title": "Doom (2016)",
                 "image-link": "https://images.ctfassets.net/rporu91m20dc/3Aw3GHu8eCsAXwLQxJvEtJ/3ca44b8470c254632c047835bffbb557/D16_Slayer_Cover_HERO_1920x870.png",
                 "description": "[Example text]",
                 "special-image-css": [["width", "250%"], ["margin", "0 -140%"]]
-            },
-            {
-                "title": "Hades",
-                "image-link": "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/21904999/Hades_Launch.png?quality=90&strip=all&crop=21.875,0,56.25,100",
-                "description": "[Example text]"
             }
         ]
     },
