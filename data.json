@@ -23,8 +23,8 @@
         "type": "fullscreen",
         "titles": [
             {
-                "title": "Bloodborne",
-                "image-link": "https://image.api.playstation.com/vulcan/img/rnd/202010/2614/Sy5e8DmeKIJVjlAGraPAJYkT.png",
+                "title": "Dead Space (2023)",
+                "image-link": "https://xboxwire.thesourcemediaassets.com/sites/2/2022/10/Dead-Space-6214d346a5955cd93eca.jpg",
                 "description": "[Example text]"
             }
         ]
@@ -32,16 +32,16 @@
     {
         "type": "duo",
         "titles": [
-            {
-                "title": "Doom (2016)",
-                "image-link": "https://images.ctfassets.net/rporu91m20dc/3Aw3GHu8eCsAXwLQxJvEtJ/3ca44b8470c254632c047835bffbb557/D16_Slayer_Cover_HERO_1920x870.png",
-                "description": "[Example text]",
-                "special-css": [["width", "250%"], ["margin", "0 -140%"]]
-            },
             {
                 "title": "Hades",
                 "image-link": "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/21904999/Hades_Launch.png?quality=90&strip=all&crop=21.875,0,56.25,100",
                 "description": "[Example text]"
+            },
+            {
+                "title": "Doom (2016)",
+                "image-link": "https://images.ctfassets.net/rporu91m20dc/3Aw3GHu8eCsAXwLQxJvEtJ/3ca44b8470c254632c047835bffbb557/D16_Slayer_Cover_HERO_1920x870.png",
+                "description": "[Example text]",
+                "special-image-css": [["width", "250%"], ["margin", "0 -140%"]]
             }
         ]
     },
@@ -49,14 +49,16 @@
         "type": "duo",
         "titles": [
             {
-                "title": "Final Fantasy VII Rebirth",
-                "image-link": "https://www.gadgetmatch.com/wp-content/uploads/2023/09/01_FF7R_ARTfinal-fantasy-vii-rebirth-ffvii-rebirth-20230915.jpg",
-                "description": "[Example text]"
+                "title": "Bloodborne",
+                "image-link": "https://image.api.playstation.com/vulcan/img/rnd/202010/2614/Sy5e8DmeKIJVjlAGraPAJYkT.png",
+                "description": "[Example text]",
+                "special-image-css": [["margin", "-40% 0 -15% 0"]]
             },
             {
-                "title": "New Super Mario Bros. Wii",
-                "image-link": "./mario-bros-wii-title-screen.png",
-                "description": "[Example text]"
+                "title": "Final Fantasy VII Rebirth",
+                "image-link": "https://www.gadgetmatch.com/wp-content/uploads/2023/09/01_FF7R_ARTfinal-fantasy-vii-rebirth-ffvii-rebirth-20230915.jpg",
+                "description": "[Example text]",
+                "special-image-css": [["width", "150%"], ["margin", "0 -24%"]]
             }
         ]
     },
@@ -67,7 +69,7 @@
                 "title": "Earthbound",
                 "image-link": "https://static1.thegamerimages.com/wordpress/wp-content/uploads/2022/01/EarthBound-Street.jpg",
                 "description": "[Example text]",
-                "special-css": [["image-rendering", "pixelated"]]
+                "special-image-css": [["image-rendering", "pixelated"]]
             },
             {
                 "title": "Lego Star Wars: The Complete Saga",
@@ -78,7 +80,7 @@
                 "title": "Dr. Mario (NES)",
                 "image-link": "https://assetsio.gnwcdn.com/1_0CcGwXB.jpg?width=414&quality=70&format=jpg&auto=webp",
                 "description": "[Example text]",
-                "special-css": [["image-rendering", "pixelated"]]
+                "special-image-css": [["image-rendering", "pixelated"]]
             }
         ]
     }

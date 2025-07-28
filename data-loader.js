@@ -9,6 +9,12 @@ document.addEventListener("DOMContentLoaded", function(_) {
 
 function loadJson(json)
 {
+    if(!(json instanceof Array))
+    {
+        console.warn("Incorrect json format. See 'https://raw.githubusercontent.com/JBB248/toptengames/refs/heads/main/data.json' for an example.");
+        return;
+    }
+
     const FULLSCREEN = "fullscreen";
     const DUO = "duo";
     const TRIO = "trio";
@@ -17,12 +23,16 @@ function loadJson(json)
 
     function appendFullscreenSection(element)
     {
+        const container = document.createElement("div");
+        container.classList.add("fullscreen-section");
+
         const background = document.createElement("div");
-        background.className = "fullscreen-section";
+        background.className = "fullscreen-image";
         background.style.backgroundImage = "linear-gradient(180deg, var(--dark-color), transparent, var(--dark-color)), url(" + element["image-link"] + ")"
 
-        document.getElementById("content").appendChild(background);
-        textSectionHelper(document.getElementById("content"), element);
+        container.appendChild(background);
+        textSectionHelper(container, element);
+        document.getElementById("top-titles-section").appendChild(container);
     }
 
     function appendDuoSection(element1, element2)
@@ -31,18 +41,16 @@ function loadJson(json)
         container.className = "flex-section";
 
         const div1 = document.createElement("div");
-        div1.style.width = "750px";
-        div1.style.overflow = "hidden";
+        div1.classList.add("duo-item")
         flexSectionHelper(div1, element1);
 
         const div2 = document.createElement("div");
-        div2.style.width = "750px";
-        div2.style.overflow = "hidden";
+        div2.classList.add("duo-item")
         flexSectionHelper(div2, element2);
 
         container.appendChild(div1);
         container.appendChild(div2);
-        document.getElementById("content").appendChild(container);
+        document.getElementById("top-titles-section").appendChild(container);
     }
 
     function appendTrioSection(element1, element2, element3)
@@ -51,24 +59,21 @@ function loadJson(json)
         container.className = "flex-section";
 
         const div1 = document.createElement("div");
-        div1.style.width = "500px";
-        div1.style.overflow = "hidden";
+        div1.classList.add("trio-item")
         flexSectionHelper(div1, element1, false);
 
         const div2 = document.createElement("div");
-        div2.style.width = "500px";
-        div2.style.overflow = "hidden";
+        div2.classList.add("trio-item")
         flexSectionHelper(div2, element2, false);
 
         const div3 = document.createElement("div");
-        div3.style.width = "500px";
-        div3.style.overflow = "hidden";
+        div3.classList.add("trio-item")
         flexSectionHelper(div3, element3, false);
 
         container.appendChild(div1);
         container.appendChild(div2);
         container.appendChild(div3);
-        document.getElementById("content").appendChild(container);
+        document.getElementById("top-titles-section").appendChild(container);
     }
 
     function textSectionHelper(container, element, indent=true)
@@ -76,7 +81,7 @@ function loadJson(json)
         const description = document.createElement("div");
         description.className = "text-section";
         if(!indent)
-            description.style.paddingLeft = "0px";
+            description.classList.add("no-indent");
 
         const title = document.createElement("h1");
         title.innerText = count + ". " + element["title"];
@@ -97,22 +102,38 @@ function loadJson(json)
 
     function flexSectionHelper(container, element, indent=true)
     {
+        const imageContainer = document.createElement("div");
+        imageContainer.classList.add("showoff-image-container");
+
         const image = document.createElement("img");
         image.setAttribute("src", element["image-link"]);
-        image.style.width = "100%";
-        if(element["special-css"])
-            element["special-css"].forEach(style => image.style.setProperty(style[0], style[1]));
+        image.classList.add("showoff-image");
+        if(element["special-image-css"])
+            element["special-image-css"].forEach(style => image.style.setProperty(style[0], style[1]));
 
-        container.appendChild(image);
+        imageContainer.appendChild(image);
+        container.appendChild(imageContainer);
         textSectionHelper(container, element, indent);
     }
 
-    json.forEach(element => {
+    json.forEach((element, index) => {
         if(element.type == FULLSCREEN)
-            appendFullscreenSection(element.titles[0]);
+            if(element.titles && element.titles instanceof Array && element.titles.length > 0)
+                appendFullscreenSection(element.titles[0]);
+            else
+                console.warn("Section " + (index + 1) + " (fullscreen section) either could not be read or is empty.");
         else if(element.type == DUO)
-            appendDuoSection(element.titles[0], element.titles[1]);
+            if(element.titles && element.titles instanceof Array && element.titles.length > 1)
+                appendDuoSection(element.titles[0], element.titles[1]);
+            else
+                console.warn("Section " + (index + 1) + " (duo section) either could not be read or does not contain at least two titles.");
+
         else if(element.type == TRIO)
-            appendTrioSection(element.titles[0], element.titles[1], element.titles[2]);
+            if(element.titles && element.titles instanceof Array && element.titles.length > 2)
+                appendTrioSection(element.titles[0], element.titles[1], element.titles[2]);
+            else
+                console.warn("Section " + (index + 1) + " (trio section) either could not be read or does not contain at least three titles.");
+        else
+            console.warn("Section " + (index + 1) + " has no valid type");
     });
 }
