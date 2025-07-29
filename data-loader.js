@@ -11,7 +11,7 @@ function loadJson(json)
 {
     if(!(json instanceof Array))
     {
-        console.warn("Incorrect json format. See 'https://raw.githubusercontent.com/JBB248/toptengames/refs/heads/main/data.json' for an example.");
+        console.warn("Incorrect json format. See 'https://jbb248.github.io/toptengames/data.json' for an example.");
         return;
     }
 
@@ -31,7 +31,8 @@ function loadJson(json)
         background.style.backgroundImage = "linear-gradient(180deg, var(--dark-color), transparent, var(--dark-color)), url(" + element["image-link"] + ")"
 
         container.appendChild(background);
-        textSectionHelper(container, element);
+        creditsHelper(container, element, true);
+        textSectionHelper(container, element, true);
         document.getElementById("top-titles-section").appendChild(container);
     }
 
@@ -60,15 +61,15 @@ function loadJson(json)
 
         const div1 = document.createElement("div");
         div1.classList.add("trio-item")
-        flexSectionHelper(div1, element1, false);
+        flexSectionHelper(div1, element1);
 
         const div2 = document.createElement("div");
         div2.classList.add("trio-item")
-        flexSectionHelper(div2, element2, false);
+        flexSectionHelper(div2, element2);
 
         const div3 = document.createElement("div");
         div3.classList.add("trio-item")
-        flexSectionHelper(div3, element3, false);
+        flexSectionHelper(div3, element3);
 
         container.appendChild(div1);
         container.appendChild(div2);
@@ -76,7 +77,7 @@ function loadJson(json)
         document.getElementById("top-titles-section").appendChild(container);
     }
 
-    function textSectionHelper(container, element, indent=true)
+    function textSectionHelper(container, element, indent=false)
     {
         const description = document.createElement("div");
         description.className = "text-section";
@@ -100,7 +101,7 @@ function loadJson(json)
         count++;
     }
 
-    function flexSectionHelper(container, element, indent=true)
+    function flexSectionHelper(container, element)
     {
         const imageContainer = document.createElement("div");
         imageContainer.classList.add("showoff-image-container");
@@ -113,7 +114,22 @@ function loadJson(json)
 
         imageContainer.appendChild(image);
         container.appendChild(imageContainer);
-        textSectionHelper(container, element, indent);
+
+        creditsHelper(container, element);
+        textSectionHelper(container, element);
+    }
+
+    function creditsHelper(container, element, indent=false)
+    {
+        if(!element["image-source"]) return
+
+        const credits = document.createElement("p");
+        credits.innerHTML = 'Image sourced from: <a target="_blank" href=' + element["image-source"].link + '>' + element["image-source"].title + '</a>';
+        credits.style.margin = "0px";
+        if(indent)
+            credits.classList.add("text-section");
+        
+        container.appendChild(credits);
     }
 
     json.forEach((element, index) => {

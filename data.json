@@ -5,6 +5,10 @@
             {
                 "title": "Portal 2",
                 "image-link": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/ss_3d13161104a04603a0524536770c5f74626db4c0.1920x1080.jpg?t=1745363004",
+                "image-source": {
+                    "title": "Steam",
+                    "link": "https://store.steampowered.com/app/620/Portal_2/"
+                },
                 "description": "[Example text]"
             }
         ]
@@ -15,6 +19,10 @@
             {
                 "title": "Mario Kart Wii",
                 "image-link": "https://mario.wiki.gallery/images/thumb/d/db/Poster_MKWii.jpg/800px-Poster_MKWii.jpg",
+                "image-source": {
+                    "title": "Mario Wiki",
+                    "link": "https://www.mariowiki.com/Mario_Kart_Wii"
+                },
                 "description": "[Example text]"
             }
         ]
@@ -25,7 +33,36 @@
             {
                 "title": "Dead Space (2023)",
                 "image-link": "https://xboxwire.thesourcemediaassets.com/sites/2/2022/10/Dead-Space-6214d346a5955cd93eca.jpg",
+                "image-source": {
+                    "title": "Xbox Wire",
+                    "link": "https://news.xbox.com/en-us/2022/10/04/remaking-dead-space-available-for-pre-order-today/"
+                },
                 "description": "[Example text]"
+            }
+        ]
+    },
+    {
+        "type": "duo",
+        "titles": [
+            {
+                "title": "Final Fantasy VII Rebirth",
+                "image-link": "https://static0.gamerantimages.com/wordpress/wp-content/uploads/2024/02/ff7-rebirth-cloud-sephiroth-and-zack.jpg",
+                "image-source": {
+                    "title": "Game Rant",
+                    "link": "https://gamerant.com/final-fantasy-7-rebirth-review/"
+                },
+                "description": "Very few characters have the reputation and aura that Cloud Strife holds. This game was a dream come true. I already loved FFVII Remake, and then they made it open world, sped up the combat by eleven, and added an awesome subplot involving an addictive minigame, Queen's Blood. Everything about this game is satisfying. The revamped ATB meter providing a moment to strategize, the Synergy Attacks taking back the tide of battle, and the Limit Breaks ending battles in the absolute flashiest form possible. This game has, without a doubt, my favorite combat of any video game I've ever played. My quest to 100% this game is still ongoing, and I will not give up until I reach the end.",
+                "special-image-css": [["width", "150%"], ["margin", "0 -24%"]]
+            },
+            {
+                "title": "Bloodborne",
+                "image-link": "https://image.api.playstation.com/vulcan/img/rnd/202010/2614/Sy5e8DmeKIJVjlAGraPAJYkT.png",
+                "image-source": {
+                    "title": "Playstation",
+                    "link": "https://www.playstation.com/en-us/games/bloodborne/"
+                },
+                "description": "",
+                "special-image-css": [["margin", "-40% 0 -15% 0"]]
             }
         ]
     },
@@ -34,31 +71,22 @@
         "titles": [
             {
                 "title": "Hades",
-                "image-link": "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/21904999/Hades_Launch.png?quality=90&strip=all&crop=21.875,0,56.25,100",
+                "image-link": "https://assets.nintendo.com/image/upload/q_auto/f_auto/ncom/software/switch/70010000033131/dbc8c55a21688b446a5c57711b726956483a14ef8c5ddb861f897c0595ccb6b5",
+                "image-source": {
+                    "title": "Nintendo",
+                    "link": "https://www.nintendo.com/us/store/products/hades-switch/?srsltid=AfmBOopYsihB3uAlYatad5TFb2BLaoBpvmAFHFsoUJ2CLYtLSGwsgXb7"
+                },
                 "description": "[Example text]"
             },
             {
                 "title": "Doom (2016)",
                 "image-link": "https://images.ctfassets.net/rporu91m20dc/3Aw3GHu8eCsAXwLQxJvEtJ/3ca44b8470c254632c047835bffbb557/D16_Slayer_Cover_HERO_1920x870.png",
+                "image-source": {
+                    "title": "Bethesda",
+                    "link": "https://bethesda.net/en/article/zdg1giMptronSgALtQ36c/doom-2016-arrives-on-google-stadia"
+                },
                 "description": "[Example text]",
                 "special-image-css": [["width", "250%"], ["margin", "0 -140%"]]
-            }
-        ]
-    },
-    {
-        "type": "duo",
-        "titles": [
-            {
-                "title": "Bloodborne",
-                "image-link": "https://image.api.playstation.com/vulcan/img/rnd/202010/2614/Sy5e8DmeKIJVjlAGraPAJYkT.png",
-                "description": "[Example text]",
-                "special-image-css": [["margin", "-40% 0 -15% 0"]]
-            },
-            {
-                "title": "Final Fantasy VII Rebirth",
-                "image-link": "https://www.gadgetmatch.com/wp-content/uploads/2023/09/01_FF7R_ARTfinal-fantasy-vii-rebirth-ffvii-rebirth-20230915.jpg",
-                "description": "[Example text]",
-                "special-image-css": [["width", "150%"], ["margin", "0 -24%"]]
             }
         ]
     },
@@ -68,18 +96,30 @@
             {
                 "title": "Earthbound",
                 "image-link": "https://static1.thegamerimages.com/wordpress/wp-content/uploads/2022/01/EarthBound-Street.jpg",
-                "description": "[Example text]",
+                "image-source": {
+                    "title": "THEGAMER",
+                    "link": "https://www.thegamer.com/earthbound-series-best-characters-party-members/"
+                },
+                "description": "Clearly, I'm not usually attracted to slow-paced, turn-based games. However, Earthbound was one of the few RPGs that really stuck with me. I love the unique artsyle and the funky music and the headache inducing battle menus and the wacky premises. What other game has you battle against a sentient pile of puke, not once, but twice?",
                 "special-image-css": [["image-rendering", "pixelated"]]
             },
             {
                 "title": "Lego Star Wars: The Complete Saga",
                 "image-link": "https://cdn2.steamgriddb.com/thumb/7cec5d42c6b145322265ae9a31ec2bf0.jpg",
-                "description": "[Example text]"
+                "image-source": {
+                    "title": "SteamGridDB",
+                    "link": "https://www.steamgriddb.com/grid/419343"
+                },
+                "description": "This was my first introduction to one of my favorite franchises, Star Wars. This was my go to with my younger brother back in the early 2010's. I have hundreds of hours on this game, and my sadness was immeasurable when the Wii began telling me that the disk could no longer be read."
             },
             {
                 "title": "Dr. Mario (NES)",
                 "image-link": "https://assetsio.gnwcdn.com/1_0CcGwXB.jpg?width=414&quality=70&format=jpg&auto=webp",
-                "description": "[Example text]",
+                "image-source": {
+                    "title": "Honest Gamers",
+                    "link": "https://www.honestgamers.com/23495/game-boy-advance/classic-nes-series-dr-mario/game.html"
+                },
+                "description": "While Dr. Mario is quite simple, it's a test of endurance and reaction speed. It will also always be special to me because it is the only video game that I can play with my mother.",
                 "special-image-css": [["image-rendering", "pixelated"]]
             }
         ]

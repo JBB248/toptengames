@@ -10,6 +10,14 @@ body {
     margin: 0px;
 }
 
+p {
+    line-height: 1.5em;
+}
+
+a {
+    color: var(--light-color);
+}
+
 #header {
     background-color: var(--dark-color);
     text-align: center;
@@ -17,8 +25,15 @@ body {
 }
 
 .text-section {
-    padding: 10px;
+    padding-bottom: 10px;
     padding-left: 20%;
+}
+
+/* Narrow screens look bad with the indent */
+@media only screen and (max-width: 600px) {
+    .text-section {
+        padding: 10px;
+    }
 }
 
 .no-indent {
