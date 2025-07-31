@@ -21,6 +21,20 @@ function loadJson(json)
 
     let count = 1;
 
+    const debugTextInput = document.createElement("textarea");
+    debugTextInput.wrap = true;
+    debugTextInput.rows = 10;
+
+    document.getElementById("fuck-gamestop").addEventListener("click", function(event) {
+        if(event.detail === 3)
+            saveJson();
+    });
+
+    function saveJson()
+    {
+        console.log("Eatma");
+    }
+
     function appendFullscreenSection(element)
     {
         const container = document.createElement("div");
@@ -95,6 +109,8 @@ function loadJson(json)
 
         description.appendChild(title);
         description.appendChild(text);
+        addDebugToText(title);
+        addDebugToText(text);
 
         container.appendChild(description);
 
@@ -130,6 +146,26 @@ function loadJson(json)
             credits.classList.add("text-section");
         
         container.appendChild(credits);
+    }
+
+    function addDebugToText(text)
+    {
+        text.addEventListener("click", function(event) {
+            if(event.detail === 3)
+                pullUpDebugInput(text);
+        });
+    }
+
+    function pullUpDebugInput(text)
+    {
+        debugTextInput.value = text.innerText;
+        debugTextInput.hidden = false;
+        debugTextInput.focus();
+        debugTextInput.addEventListener("focusout", (_) => {
+            text.innerText = debugTextInput.value;
+            debugTextInput.hidden = true;
+        }, {once: true});
+        text.after(debugTextInput);
     }
 
     json.forEach((element, index) => {
