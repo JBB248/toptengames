@@ -58,7 +58,7 @@ function loadJson(json)
             titles: [
                 {
                     "title": element.children[2].children[1].innerText,
-                    "image-link": element.children[0].style.backgroundImage.slice(80, -1),
+                    "image-link": element.children[0].getAttribute("image-link"),
                     "image-source": {
                         "title": element.children[1].children[0].innerText,
                         "link": element.children[1].children[0].href
@@ -112,7 +112,9 @@ function loadJson(json)
 
         const background = document.createElement("div");
         background.className = "fullscreen-image";
-        background.style.backgroundImage = "linear-gradient(180deg, var(--dark-color), transparent, var(--dark-color)), url(" + element["image-link"] + ")"
+        background.setAttribute("image-link", element["image-link"]);
+        background.style.backgroundImage = "linear-gradient(180deg, var(--dark-color), transparent, var(--dark-color)), url(" + element["image-link"] + ")";
+        addDebugToBackground(background);
 
         container.appendChild(background);
         creditsHelper(container, element, true);
@@ -208,6 +210,7 @@ function loadJson(json)
         image.classList.add("showoff-image");
         if(element["special-image-css"])
             element["special-image-css"].forEach(style => image.style.setProperty(style[0], style[1]));
+        addDebugToImage(image);
 
         imageContainer.appendChild(image);
         container.appendChild(imageContainer);
@@ -233,11 +236,11 @@ function loadJson(json)
     {
         text.addEventListener("click", function(event) {
             if(event.detail === 3)
-                pullUpDebugInput(text);
+                pullUpDebugTextInput(text);
         });
     }
 
-    function pullUpDebugInput(text)
+    function pullUpDebugTextInput(text)
     {
         debugTextInput.value = text.innerText;
         debugTextInput.hidden = false;
@@ -248,6 +251,48 @@ function loadJson(json)
         }, {once: true});
         text.after(debugTextInput);
     }
+
+    function addDebugToBackground(image)
+    {
+        image.addEventListener("click", function(event) {
+            if(event.detail === 3)
+                pullUpDebugFullscreenInput(image);
+        });
+    }
+
+    function pullUpDebugFullscreenInput(background)
+    {
+        debugTextInput.value = background.getAttribute("image-link");
+        debugTextInput.hidden = false;
+        debugTextInput.focus();
+        debugTextInput.addEventListener("focusout", (_) => {
+            background.setAttribute("image-link", debugTextInput.value);
+            background.style.backgroundImage = "linear-gradient(180deg, var(--dark-color), transparent, var(--dark-color)), url(" + debugTextInput.value + ")";
+            debugTextInput.hidden = true;
+        }, {once: true});
+        background.after(debugTextInput);
+    }
+
+    function addDebugToImage(image)
+    {
+        image.addEventListener("click", function(event) {
+            if(event.detail === 3)
+                pullUpDebugImageInput(image);
+        });
+    }
+
+    function pullUpDebugImageInput(image)
+    {
+        debugTextInput.value = image.src;
+        debugTextInput.hidden = false;
+        debugTextInput.focus();
+        debugTextInput.addEventListener("focusout", (_) => {
+            image.src = debugTextInput.value;
+            debugTextInput.hidden = true;
+        }, {once: true});
+        image.after(debugTextInput);
+    }
+
 
     json.forEach((element, index) => {
         if(element.type == FULLSCREEN)
