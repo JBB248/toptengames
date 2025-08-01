@@ -32,7 +32,77 @@ function loadJson(json)
 
     function saveJson()
     {
-        console.log("Eatma");
+        const titles = document.getElementById("top-titles-section");
+        const data = [];
+        for(const child of titles.children)
+        {
+            if(child.classList.contains("fullscreen-section"))
+                data.push(generateFullscreenData(child));
+            if(child.classList.contains("duo-section"))
+                data.push(generateDuoData(child));
+            if(child.classList.contains("trio-section"))
+                data.push(generateTrioData(child));
+        }
+
+        var a = document.createElement("a");
+        var file = new Blob([JSON.stringify(data, null, "\t")], {type: 'text/plain'});
+        a.href = URL.createObjectURL(file);
+        a.download = 'data.json';
+        a.click();
+    }
+
+    function generateFullscreenData(element)
+    {
+        return {
+            type: "fullscreen",
+            titles: [
+                {
+                    "title": element.children[2].children[1].innerText,
+                    "image-link": element.children[0].style.backgroundImage.slice(80, -1),
+                    "image-source": {
+                        "title": element.children[1].children[0].innerText,
+                        "link": element.children[1].children[0].href
+                    },
+                    "description": element.children[2].children[2].innerText
+                }
+            ]
+        };
+    }
+
+    function generateDuoData(element)
+    {
+        return {
+            type: "duo",
+            titles: [
+                mulitDataHelper(element.children[0]),
+                mulitDataHelper(element.children[1])
+            ]
+        };
+    }
+
+    function generateTrioData(element)
+    {
+        return {
+            type: "trio",
+            titles: [
+                mulitDataHelper(element.children[0]),
+                mulitDataHelper(element.children[1]),
+                mulitDataHelper(element.children[2])
+            ]
+        };
+    }
+
+    function mulitDataHelper(element)
+    {
+        return {
+            "title": element.children[2].children[1].innerText,
+            "image-link": element.children[0].children[0].src,
+            "image-source": {
+                "title": element.children[1].children[0].innerText,
+                "link": element.children[1].children[0].href
+            },
+            "description": element.children[2].children[2].innerText
+        }
     }
 
     function appendFullscreenSection(element)
@@ -53,7 +123,8 @@ function loadJson(json)
     function appendDuoSection(element1, element2)
     {
         const container = document.createElement("div");
-        container.className = "flex-section";
+        container.classList.add("flex-section");
+        container.classList.add("duo-section");
 
         const div1 = document.createElement("div");
         div1.classList.add("duo-item")
@@ -71,7 +142,8 @@ function loadJson(json)
     function appendTrioSection(element1, element2, element3)
     {
         const container = document.createElement("div");
-        container.className = "flex-section";
+        container.classList.add("flex-section");
+        container.classList.add("trio-section");
 
         const div1 = document.createElement("div");
         div1.classList.add("trio-item")
@@ -98,15 +170,24 @@ function loadJson(json)
         if(!indent)
             description.classList.add("no-indent");
 
+        const rank = document.createElement("h1");
+        rank.innerText = count + ". ";
+        rank.style.display = "inline";
+
         const title = document.createElement("h1");
-        title.innerText = count + ". " + element["title"];
+        title.innerText = element["title"];
+        title.style.display = "inline";
+        title.id = "title";
+
         if(count == 1)
-            title.style.color = "#EFBF04";
+            rank.style.color = title.style.color = "#EFBF04";
         if(count == 3)
-            title.style.color = "#CD7F32";
+            rank.style.color = title.style.color = "#CD7F32";
+
         const text = document.createElement("p");
         text.innerText = element["description"];
 
+        description.appendChild(rank);
         description.appendChild(title);
         description.appendChild(text);
         addDebugToText(title);
