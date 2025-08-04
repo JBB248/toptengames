@@ -94,6 +94,15 @@ function loadJson(json)
 
     function mulitDataHelper(element)
     {
+        const cStyle = element.children[0].children[0].style;
+        const styleMap = {};
+
+        for (let i = 0; i < cStyle.length; i++) {
+            const propertyName = cStyle[i];
+            const propertyValue = cStyle.getPropertyValue(propertyName);
+            styleMap[propertyName] = propertyValue;
+        }
+
         return {
             "title": element.children[2].children[1].innerText,
             "image-link": element.children[0].children[0].src,
@@ -101,7 +110,8 @@ function loadJson(json)
                 "title": element.children[1].children[0].innerText,
                 "link": element.children[1].children[0].href
             },
-            "description": element.children[2].children[2].innerText
+            "description": element.children[2].children[2].innerText,
+            "special-image-css": styleMap
         }
     }
 
@@ -208,8 +218,7 @@ function loadJson(json)
         const image = document.createElement("img");
         image.setAttribute("src", element["image-link"]);
         image.classList.add("showoff-image");
-        if(element["special-image-css"])
-            element["special-image-css"].forEach(style => image.style.setProperty(style[0], style[1]));
+        Object.keys(element["special-image-css"]).forEach(key => image.style.setProperty(key, element["special-image-css"][key]));
         addDebugToImage(image);
 
         imageContainer.appendChild(image);
