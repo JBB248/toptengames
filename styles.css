@@ -10,6 +10,18 @@ body {
     margin: 0px;
 }
 
+p {
+    line-height: 1.5em;
+}
+
+a {
+    color: var(--light-color);
+}
+
+textarea {
+    width: 100%;
+}
+
 #header {
     background-color: var(--dark-color);
     text-align: center;
@@ -17,8 +29,14 @@ body {
 }
 
 .text-section {
-    padding: 10px;
-    padding-left: 20%;
+    padding: 10px 15%;
+}
+
+/* Narrow screens look bad with the indent */
+@media only screen and (max-width: 600px) {
+    .text-section {
+        padding: 10px;
+    }
 }
 
 .no-indent {
@@ -38,7 +56,7 @@ body {
 }
 
 .flex-section {
-    border-top: #BBBBBB solid 5px;
+    border-top: var(--light-color) solid 5px;
     background-color: rgba(5, 7, 10, 0.95);
 
     display: flex;

@@ -1,87 +1,154 @@
 [
-    {
-        "type": "fullscreen",
-        "titles": [
-            {
-                "title": "Portal 2",
-                "image-link": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/ss_3d13161104a04603a0524536770c5f74626db4c0.1920x1080.jpg?t=1745363004",
-                "description": "[Example text]"
-            }
-        ]
-    },
-    {
-        "type": "fullscreen",
-        "titles": [
-            {
-                "title": "Mario Kart Wii",
-                "image-link": "https://mario.wiki.gallery/images/thumb/d/db/Poster_MKWii.jpg/800px-Poster_MKWii.jpg",
-                "description": "[Example text]"
-            }
-        ]
-    },
-    {
-        "type": "fullscreen",
-        "titles": [
-            {
-                "title": "Dead Space (2023)",
-                "image-link": "https://xboxwire.thesourcemediaassets.com/sites/2/2022/10/Dead-Space-6214d346a5955cd93eca.jpg",
-                "description": "[Example text]"
-            }
-        ]
-    },
-    {
-        "type": "duo",
-        "titles": [
-            {
-                "title": "Hades",
-                "image-link": "https://platform.polygon.com/wp-content/uploads/sites/2/chorus/uploads/chorus_asset/file/21904999/Hades_Launch.png?quality=90&strip=all&crop=21.875,0,56.25,100",
-                "description": "[Example text]"
-            },
-            {
-                "title": "Doom (2016)",
-                "image-link": "https://images.ctfassets.net/rporu91m20dc/3Aw3GHu8eCsAXwLQxJvEtJ/3ca44b8470c254632c047835bffbb557/D16_Slayer_Cover_HERO_1920x870.png",
-                "description": "[Example text]",
-                "special-image-css": [["width", "250%"], ["margin", "0 -140%"]]
-            }
-        ]
-    },
-    {
-        "type": "duo",
-        "titles": [
-            {
-                "title": "Bloodborne",
-                "image-link": "https://image.api.playstation.com/vulcan/img/rnd/202010/2614/Sy5e8DmeKIJVjlAGraPAJYkT.png",
-                "description": "[Example text]",
-                "special-image-css": [["margin", "-40% 0 -15% 0"]]
-            },
-            {
-                "title": "Final Fantasy VII Rebirth",
-                "image-link": "https://www.gadgetmatch.com/wp-content/uploads/2023/09/01_FF7R_ARTfinal-fantasy-vii-rebirth-ffvii-rebirth-20230915.jpg",
-                "description": "[Example text]",
-                "special-image-css": [["width", "150%"], ["margin", "0 -24%"]]
-            }
-        ]
-    },
-    {
-        "type": "trio",
-        "titles": [
-            {
-                "title": "Earthbound",
-                "image-link": "https://static1.thegamerimages.com/wordpress/wp-content/uploads/2022/01/EarthBound-Street.jpg",
-                "description": "[Example text]",
-                "special-image-css": [["image-rendering", "pixelated"]]
-            },
-            {
-                "title": "Lego Star Wars: The Complete Saga",
-                "image-link": "https://cdn2.steamgriddb.com/thumb/7cec5d42c6b145322265ae9a31ec2bf0.jpg",
-                "description": "[Example text]"
-            },
-            {
-                "title": "Dr. Mario (NES)",
-                "image-link": "https://assetsio.gnwcdn.com/1_0CcGwXB.jpg?width=414&quality=70&format=jpg&auto=webp",
-                "description": "[Example text]",
-                "special-image-css": [["image-rendering", "pixelated"]]
-            }
-        ]
-    }
+	{
+		"type": "fullscreen",
+		"titles": [
+			{
+				"title": "Portal 2",
+				"image-link": "https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/620/ss_3d13161104a04603a0524536770c5f74626db4c0.1920x1080.jpg?t=1745363004",
+				"image-source": {
+					"title": "Steam",
+					"link": "https://store.steampowered.com/app/620/Portal_2/"
+				},
+				"description": "[Example text]"
+			}
+		]
+	},
+	{
+		"type": "fullscreen",
+		"titles": [
+			{
+				"title": "Mario Kart Wii",
+				"image-link": "https://mario.wiki.gallery/images/thumb/d/db/Poster_MKWii.jpg/800px-Poster_MKWii.jpg",
+				"image-source": {
+					"title": "Mario Wiki",
+					"link": "https://www.mariowiki.com/Mario_Kart_Wii"
+				},
+				"description": "This is my go to on the Wii. I love, love, love the edgy 2000's style that Mario Kart Wii goes for. This game feels like a true racing game. There are no coins. The handling is crisp. I prefer manually performing wheelies and tricks instead of the game automatically doing in later titles. My favorite part though is that this game is cruel. The computer players are merciless. They still give me, an experienced at long-time player, a tough time. Mario Kart Wii is one of the least balanced games of all time as well with a very defined tier list. You are considered deranged if you drive something that uses outside drift, but the vehicles such as the Wild Wing, the Wario Bike, and the Flame Flyer, some of my favorites, sport outside drift. But there's always a thrill in defying the meta. Playing online always provides hundreds of Funky Kongs on Flame Runners and Daisys on Mach Bikes, but that opens up the gates to be better. I like to play Luigi or King Boo or Toad and when I win, I revel in my victory. You've defeated the people who play the game for sport rather than for fun. You don't need a tier list to win. You've got real talent, and this is the game that I can prove it. Or at least it was. I haven't played it like that in some time and the online community is pretty dead. It's become my favorite time killer. I 100% the game, then I reset it and do it again. I've performed this cycle at least four times. I will always love Mario Kart Wii. Nothing will ever replace it in my heart, and that is why it is in my top three. Good job, Nintendo. Mario Kart Wii is truly a masterpiece."
+			}
+		]
+	},
+	{
+		"type": "fullscreen",
+		"titles": [
+			{
+				"title": "Final Fantasy VII Rebirth",
+				"image-link": "https://cdn1.epicgames.com/offer/e9a679451d094c1ba3d008b6a01adec5/EGS_FINALFANTASYVIIREBIRTH_SquareEnix_S1_2560x1440-e254f978084058f898118dc49728d04c",
+				"image-source": {
+					"title": "Epic Games Store",
+					"link": "https://store.epicgames.com/en-US/p/final-fantasy-vii-rebirth"
+				},
+				"description": "[Example text]"
+			}
+		]
+	},
+	{
+		"type": "duo",
+		"titles": [
+			{
+				"title": "Dead Space (2023)",
+				"image-link": "https://xboxwire.thesourcemediaassets.com/sites/2/2022/10/Dead-Space-6214d346a5955cd93eca.jpg",
+				"image-source": {
+					"title": "Xbox Wire",
+					"link": "https://news.xbox.com/en-us/2022/10/04/remaking-dead-space-available-for-pre-order-today/"
+				},
+				"description": "[Example text]",
+				"special-image-css": {
+					"width": "150%",
+					"margin-top": "0px",
+					"margin-right": "-20%",
+					"margin-bottom": "0px",
+					"margin-left": "-20%"
+				}
+			},
+			{
+				"title": "Bloodborne",
+				"image-link": "https://image.api.playstation.com/vulcan/img/rnd/202010/2614/Sy5e8DmeKIJVjlAGraPAJYkT.png",
+				"image-source": {
+					"title": "Playstation Store",
+					"link": "https://www.playstation.com/en-us/games/bloodborne/"
+				},
+				"description": "[Example text]",
+				"special-image-css": {
+					"margin-top": "-40%",
+					"margin-right": "0px",
+					"margin-bottom": "-15%",
+					"margin-left": "0px"
+				}
+			}
+		]
+	},
+	{
+		"type": "duo",
+		"titles": [
+			{
+				"title": "Hades",
+				"image-link": "https://assets.nintendo.com/image/upload/q_auto/f_auto/ncom/software/switch/70010000033131/dbc8c55a21688b446a5c57711b726956483a14ef8c5ddb861f897c0595ccb6b5",
+				"image-source": {
+					"title": "Nintendo eShop",
+					"link": "https://www.nintendo.com/us/store/products/hades-switch/?srsltid=AfmBOopYsihB3uAlYatad5TFb2BLaoBpvmAFHFsoUJ2CLYtLSGwsgXb7"
+				},
+				"description": "[Example text]",
+				"special-image-css": {
+					"width": "150%",
+					"margin-top": "0px",
+					"margin-right": "-25%",
+					"margin-bottom": "0px",
+					"margin-left": "-25%"
+				}
+			},
+			{
+				"title": "Doom (2016)",
+				"image-link": "https://images.ctfassets.net/rporu91m20dc/3Aw3GHu8eCsAXwLQxJvEtJ/3ca44b8470c254632c047835bffbb557/D16_Slayer_Cover_HERO_1920x870.png",
+				"image-source": {
+					"title": "Bethesda",
+					"link": "https://bethesda.net/en/article/zdg1giMptronSgALtQ36c/doom-2016-arrives-on-google-stadia"
+				},
+				"description": "[Example text]",
+				"special-image-css": {
+					"width": "250%",
+					"margin-top": "0px",
+					"margin-right": "-140%",
+					"margin-bottom": "0px",
+					"margin-left": "-140%"
+				}
+			}
+		]
+	},
+	{
+		"type": "trio",
+		"titles": [
+			{
+				"title": "Resident Evil 4 (2023)",
+				"image-link": "https://www.relyonhorror.com/wp-content/uploads/2023/03/maxresdefault.jpg",
+				"image-source": {
+					"title": "Rely on Horror",
+					"link": "https://www.relyonhorror.com/reviews/review-resident-evil-4-2023/"
+				},
+				"description": "[Example text]",
+				"special-image-css": {}
+			},
+			{
+				"title": "Earthbound",
+				"image-link": "https://static1.thegamerimages.com/wordpress/wp-content/uploads/2022/01/EarthBound-Street.jpg",
+				"image-source": {
+					"title": "THEGAMER",
+					"link": "https://www.thegamer.com/earthbound-series-best-characters-party-members/"
+				},
+				"description": "Clearly, I'm not usually attracted to slow-paced, turn-based games. However, Earthbound was one of the few RPGs that really stuck with me. I love the unique artsyle and the funky music and the headache inducing battle menus and the wacky premises. What other game has you battle against a sentient pile of puke, not once, but twice?",
+				"special-image-css": {
+					"image-rendering": "pixelated"
+				}
+			},
+			{
+				"title": "Lego Star Wars: The Complete Saga",
+				"image-link": "https://cdn2.steamgriddb.com/thumb/7cec5d42c6b145322265ae9a31ec2bf0.jpg",
+				"image-source": {
+					"title": "SteamGridDB",
+					"link": "https://www.steamgriddb.com/grid/419343"
+				},
+				"description": "This was my first introduction to one of my favorite franchises, Star Wars. This was my go to with my younger brother back in the early 2010's. I have hundreds of hours on this game, and my sadness was immeasurable when the Wii began telling me that the disk could no longer be read.",
+				"special-image-css": {}
+			}
+		]
+	}
 ]
