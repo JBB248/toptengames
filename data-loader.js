@@ -25,10 +25,15 @@ function loadJson(json)
     debugTextInput.wrap = true;
     debugTextInput.rows = 10;
 
-    document.getElementById("fuck-gamestop").addEventListener("click", function(event) {
+    const fg = document.getElementById("fuck-gamestop");
+    function saveEvent(event) 
+    {
         if(event.detail === 3)
             saveJson();
-    });
+    }
+    
+    fg.addEventListener("mouseup", saveEvent);
+    fg.addEventListener("touchend", saveEvent); // For mobile
 
     function saveJson()
     {
@@ -243,10 +248,14 @@ function loadJson(json)
 
     function addDebugToText(text)
     {
-        text.addEventListener("click", function(event) {
+        function textClickEvent(event)
+        {
             if(event.detail === 3)
                 pullUpDebugTextInput(text);
-        });
+        }
+
+        text.addEventListener("mouseup", textClickEvent);
+        text.addEventListener("touchend", textClickEvent);
     }
 
     function pullUpDebugTextInput(text)
@@ -263,10 +272,14 @@ function loadJson(json)
 
     function addDebugToBackground(image)
     {
-        image.addEventListener("click", function(event) {
+        function fullscreenImageClickEvent(event) 
+        {
             if(event.detail === 3)
                 pullUpDebugFullscreenInput(image);
-        });
+        }
+
+        image.addEventListener("mouseup", fullscreenImageClickEvent);
+        image.addEventListener("touchend", fullscreenImageClickEvent);
     }
 
     function pullUpDebugFullscreenInput(background)
@@ -284,10 +297,14 @@ function loadJson(json)
 
     function addDebugToImage(image)
     {
-        image.addEventListener("click", function(event) {
+        function imageClickEvent(event) 
+        {
             if(event.detail === 3)
                 pullUpDebugImageInput(image);
-        });
+        }
+        
+        image.addEventListener("mouseup", imageClickEvent);
+        image.addEventListener("touchend", imageClickEvent);
     }
 
     function pullUpDebugImageInput(image)
