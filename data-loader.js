@@ -248,14 +248,10 @@ function loadJson(json)
 
     function addDebugToText(text)
     {
-        function textClickEvent(event)
-        {
-            if(event.detail === 3)
-                pullUpDebugTextInput(text);
-        }
-
-        text.addEventListener("mouseup", textClickEvent);
-        text.addEventListener("touchend", textClickEvent);
+        text.addEventListener("dblclick", function(event) {
+            pullUpDebugTextInput(text);
+            event.preventDefault();
+        });
     }
 
     function pullUpDebugTextInput(text)
@@ -272,14 +268,10 @@ function loadJson(json)
 
     function addDebugToBackground(image)
     {
-        function fullscreenImageClickEvent(event) 
-        {
-            if(event.detail === 3)
-                pullUpDebugFullscreenInput(image);
-        }
-
-        image.addEventListener("mouseup", fullscreenImageClickEvent);
-        image.addEventListener("touchend", fullscreenImageClickEvent);
+        image.addEventListener("dblclick", function(event) {
+            pullUpDebugFullscreenInput(image);
+            event.preventDefault();
+        });
     }
 
     function pullUpDebugFullscreenInput(background)
@@ -296,15 +288,11 @@ function loadJson(json)
     }
 
     function addDebugToImage(image)
-    {
-        function imageClickEvent(event) 
-        {
-            if(event.detail === 3)
-                pullUpDebugImageInput(image);
-        }
-        
-        image.addEventListener("mouseup", imageClickEvent);
-        image.addEventListener("touchend", imageClickEvent);
+    {   
+        image.addEventListener("dblclick", function(event) {
+            pullUpDebugImageInput(image);
+            event.preventDefault();
+        });
     }
 
     function pullUpDebugImageInput(image)
