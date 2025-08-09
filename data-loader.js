@@ -15,6 +15,9 @@ function loadJson(json)
         return;
     }
 
+    // Check if there is no mouse, I guess?
+    const isTouchScreen = window.matchMedia("(any-hover:none)").matches;
+
     const FULLSCREEN = "fullscreen";
     const DUO = "duo";
     const TRIO = "trio";
@@ -28,12 +31,27 @@ function loadJson(json)
     const fg = document.getElementById("fuck-gamestop");
     function saveEvent(event) 
     {
-        if(event.detail === 3)
-            saveJson();
+        saveJson();
+        event.preventDefault();
     }
+
+    var touchTimer;
     
-    fg.addEventListener("mouseup", saveEvent);
-    fg.addEventListener("touchend", saveEvent); // For mobile
+    if(isTouchScreen)
+    {
+        fg.addEventListener("mousedown", event => {
+            event.preventDefault();
+            window.clearTimeout(touchTimer);
+            touchTimer = window.setTimeout(_ => saveJson(), 1000);
+        });
+
+        fg.addEventListener("mouseup", event => {
+            event.preventDefault();
+            window.clearTimeout(touchTimer);
+        });
+    }
+    else
+        fg.addEventListener("dblclick", saveEvent);
 
     function saveJson()
     {
@@ -258,12 +276,12 @@ function loadJson(json)
     {
         debugTextInput.value = text.innerText;
         debugTextInput.hidden = false;
-        debugTextInput.focus();
         debugTextInput.addEventListener("focusout", (_) => {
             text.innerText = debugTextInput.value;
             debugTextInput.hidden = true;
         }, {once: true});
         text.after(debugTextInput);
+        debugTextInput.focus();
     }
 
     function addDebugToBackground(image)
